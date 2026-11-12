@@ -1,0 +1,6 @@
+{
+  "name": "دفتر الأستاذ والحسابات - LedgerApp",
+  "description": "تطبيق محاسبي متنقل لإدارة حسابات العملاء والموردين، دفاتر الديون، حركة الصندوق وسندات القبض والصرف، يدعم العمل بدون إنترنت.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

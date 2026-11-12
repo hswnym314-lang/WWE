@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Noto Sans Arabic', 'Droid Arabic Naskh', 'Geeza Pro', 'Tahoma', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    --theme-bg: #f1f5f9;
+    --theme-surface: #ffffff;
+    --theme-surface-alt: #f8fafc;
+    --theme-border: #e2e8f0;
+    --theme-text: #0f172a;
+    --theme-text-muted: #64748b;
+    --theme-accent: #059669;
+    --theme-accent-hover: #047857;
+    --theme-accent-soft: #ecfdf5;
+    --theme-accent-text: #047857;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  input, textarea, select, [contenteditable="true"] {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+/* Global Font Weight Modes (خط عادي / خط عريض / عريض جداً) */
+html[data-font-weight="bold"] body {
+  font-weight: 700;
+}
+
+html[data-font-weight="bold"] .font-normal,
+html[data-font-weight="bold"] .font-medium,
+html[data-font-weight="bold"] .font-semibold,
+html[data-font-weight="bold"] input,
+html[data-font-weight="bold"] textarea,
+html[data-font-weight="bold"] button {
+  font-weight: 700 !important;
+}
+
+html[data-font-weight="bold"] .font-bold,
+html[data-font-weight="bold"] .font-extrabold {
+  font-weight: 800 !important;
+}
+
+html[data-font-weight="extrabold"] body {
+  font-weight: 800;
+}
+
+html[data-font-weight="extrabold"] .font-normal,
+html[data-font-weight="extrabold"] .font-medium,
+html[data-font-weight="extrabold"] .font-semibold,
+html[data-font-weight="extrabold"] .font-bold,
+html[data-font-weight="extrabold"] .font-extrabold,
+html[data-font-weight="extrabold"] input,
+html[data-font-weight="extrabold"] textarea,
+html[data-font-weight="extrabold"] button,
+html[data-font-weight="extrabold"] h1,
+html[data-font-weight="extrabold"] h2,
+html[data-font-weight="extrabold"] h3,
+html[data-font-weight="extrabold"] td,
+html[data-font-weight="extrabold"] th {
+  font-weight: 900 !important;
+}
+
+.theme-bg {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+.theme-surface {
+  background-color: var(--theme-surface);
+  border-color: var(--theme-border);
+  color: var(--theme-text);
+}
+
+.theme-surface-alt {
+  background-color: var(--theme-surface-alt);
+}
+
+.theme-border {
+  border-color: var(--theme-border);
+}
+
+.theme-text-muted {
+  color: var(--theme-text-muted);
+}
+
+.theme-accent-bg {
+  background-color: var(--theme-accent);
+  color: #ffffff;
+}
+
+.theme-accent-bg:hover {
+  background-color: var(--theme-accent-hover);
+}
+
+.theme-accent-soft {
+  background-color: var(--theme-accent-soft);
+  color: var(--theme-accent-text);
+}
+
+/* Safe area insets for mobile Android webview */
+.pb-safe {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.pt-safe {
+  padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+}
+
+/* Print voucher/receipt styling */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .printable-area {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+  }
+}
